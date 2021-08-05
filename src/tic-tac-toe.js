@@ -12,11 +12,11 @@ class TicTacToe {
 
   nextTurn(rowIndex, columnIndex) {
     if (
-      this.field[rowIndex][columnIndex] ||
-      rowIndex < 0 ||
-      rowIndex > 2 ||
-      columnIndex < 0 ||
-      columnIndex > 2
+      this.field[rowIndex][columnIndex]
+      || rowIndex < 0
+      || rowIndex > 2
+      || columnIndex < 0
+      || columnIndex > 2
     ) {
       return;
     }
@@ -42,7 +42,7 @@ class TicTacToe {
 
       // check winner horizontal
       for (let i = 0; i < lengthField; i += 1) {
-        let line = this.field[i].join('');
+        const line = this.field[i].join('');
 
         if (line === 'xxx' || line === 'ooo') {
           this.winner = this.currentPlayer;
