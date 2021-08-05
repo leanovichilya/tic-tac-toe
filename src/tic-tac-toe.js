@@ -79,10 +79,8 @@ class TicTacToe {
       line = '';
 
       // check winner up-down diagonal
-      let column = lengthField - 1;
-
       for (let i = 0; i < lengthField; i += 1) {
-        line += this.field[i][column--];
+        line += this.field[i][lengthField - i - 1];
 
         if (line === 'xxx' || line === 'ooo') {
           this.winner = this.currentPlayer;
