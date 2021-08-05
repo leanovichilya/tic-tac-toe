@@ -68,13 +68,11 @@ class TicTacToe {
       let line = '';
 
       for (let i = 0; i < lengthField; i += 1) {
-        for (let j = i; j === i; j += 1) {
-          line += this.field[i][j];
+        line += this.field[i][i];
 
-          if (line === 'xxx' || line === 'ooo') {
-            this.winner = this.currentPlayer;
-            return this.winner;
-          }
+        if (line === 'xxx' || line === 'ooo') {
+          this.winner = this.currentPlayer;
+          return this.winner;
         }
       }
 
